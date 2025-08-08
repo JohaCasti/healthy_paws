@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.custom-logo{
+  color: #225d89;
+}
+.navbar-brand:hover {
+  color: rgb(65 120 163); 
+}
+.btn-infe{
+  color: #ffffff;
+  background: #30638b;
+}
+.btn-infe:hover{
+  color: #000000;
+  background: #ffffff;
+}
+
+.hero {
+  height: 80vh;
+  background-image: url('https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1400&q=80');
+  background-size: contain;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.btn-dark:hover {
+  background-color: #444;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 768px) {
+  .row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* CENTRAR las columnas en cada fila */
+  }
+  
+  /* Las columnas mantienen el tamaño de col-md-4 */
+  .row.g-4 > [class^="col-"] {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
