@@ -16,3 +16,12 @@ class Mascota(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+
+"""
+relacion muchos a muchos es: ej
+authors = models.ManyToManyField(Author, related_name='authors')
+relacion uno a uno es: ej
+author = models.OneToOneField(Author, on_delete=models.CASCADE)
+"""
