@@ -210,5 +210,64 @@ a.text-warning:hover {
 /* CONTACTENOS */
 
 /* FIN CONTACTENOS */
-/*  */
-/*  */
+
+/*  HOME */
+.welcome-section {
+  background-color: rgba(0, 123, 255, 0.75);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title {
+  color: #225d89;
+  font-weight: bold;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s;
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-custom {
+  background-color: white;
+}
+
+.btn-orange {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: #e68a00;
+}
+
+.carousel-inner {
+  max-height: 400px;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(85%); /* oscurece un poco toda la imagen */
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.35); /* capa oscura semitransparente */
+  border-radius: 10px;
+  padding: 10px;
+}
+/* FIN HOME */

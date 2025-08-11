@@ -1,31 +1,45 @@
-from pyexpat.errors import messages
+from django.contrib.auth import authenticate, login as auth_login
+from django.contrib import messages
 from django.shortcuts import redirect, render
+from .forms import CreationFormUser
 from .models import Person
 
 # Create your views here.
 def index(request):
+
     return render(request, 'index.html')
 
 def registro(request):
-    return render(request, 'registro.html')
+    if request.method == 'POST':
+        form = CreationFormUser(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "¡Registro exitoso!") # agregar tag , extra_tags ='loque quiero agregar'
+            return redirect('login')  # o donde quieras redirigir
+        else:
+            messages.error(request, "Hubo un error. Por favor, revisa los campos.")
+    else:
+        form = CreationFormUser()
+    return render(request, 'registro.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        # Autenticar usuario con el sistema de Django
+        user = authenticate(request, username=username, password=password)
 
-        try:
-            persona = Person.objects.get(nombre=username)
-            if persona.contraseña == password:
-                # Login exitoso, puedes guardar el usuario en la sesión si quieres
-                request.session['persona_id'] = persona.id
-                messages.success(request, 'Inicio de sesión exitoso.')
-                return redirect('home')  # Asegúrate que exista esta URL
-            else:
-                messages.error(request, 'Contraseña incorrecta.')
-        except Person.DoesNotExist:
-            messages.error(request, 'Usuario no encontrado.')
+        if user is not None:
+            # Usuario autenticado correctamente
+            auth_login(request, user)  # Iniciar sesión con Django
+            messages.success(request, 'Inicio de sesión exitoso.')
+            return redirect('home')
+        else:
+            messages.error(request, 'Usuario o contraseña incorrectos.')
     return render(request, 'login.html')
+
+def home(request):
+    return render(request, 'home.html')
 
 def contacto(request):
     return render(request, 'contacto.html')

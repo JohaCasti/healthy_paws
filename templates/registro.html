@@ -4,13 +4,22 @@
     <div class="register-container">
         <h2>Crear Cuenta</h2>
         <form method="post">
+            {% include "mensajes.html" %}
             {% csrf_token %}
-            <input type="text" name="username" placeholder="Nombre de usuario" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="password" name="password1" placeholder="Contraseña" required>
-            <input type="password" name="password2" placeholder="Confirmar contraseña" required>
-            <input type="number" name="phone" placeholder="Número de teléfono" required>
-            <input type="text" name="address" placeholder="Dirección" required>
+            {% for field in form %}
+                <div class="form-group">
+                    <input 
+                        type="{{ field.field.widget.input_type }}"
+                        name="{{ field.name }}"
+                        placeholder="{{ field.label }}"
+                        value="{{ field.value|default:'' }}"
+                        required
+                    >
+                    {% if field.errors %}
+                        <div class="error">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
             <button type="submit">Registrarse</button>
         </form>
     </div>

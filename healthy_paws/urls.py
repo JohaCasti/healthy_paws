@@ -26,6 +26,7 @@ urlpatterns = [
     path('registro/', registro, name='registro'),
     path('login/', login, name='login'),
     path('contacto/', contacto, name='contacto'),
+    path('home/', home, name='home'),
 ]
 
 if settings.DEBUG:
