@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="form-container">
-        <h2>Crear cuenta</h2>
-        <form method="POST">
+    <div class="register-container">
+        <h2>Crear Cuenta</h2>
+        <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="password" name="password1" placeholder="Contraseña" required>
+            <input type="password" name="password2" placeholder="Confirmar contraseña" required>
+            <input type="number" name="phone" placeholder="Número de teléfono" required>
+            <input type="text" name="address" placeholder="Dirección" required>
             <button type="submit">Registrarse</button>
         </form>
-        <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
     </div>
 {% endblock %}

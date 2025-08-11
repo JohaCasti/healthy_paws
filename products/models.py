@@ -5,9 +5,9 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.IntegerField()
-    descuento = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)  # ejemplo: 10.00 para 10%
-    #imagen = models.ImageField(upload_to='productos/', blank=True, null=True)  # opcional
+    stock = models.IntegerField() 
+    descuento = models.DecimalField(max_digits=5, decimal_places=2, default=0.00, null=True)  # ejemplo: 10.00 para 10%
+    imagen = models.ImageField(upload_to='productos/', blank=True, null=True)  # opcional
     habilitado = models.BooleanField(default=True)
 
     def __str__(self):
