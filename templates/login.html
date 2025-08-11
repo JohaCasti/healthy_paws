@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="login-background">
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <div class="card login-card shadow-lg text-white p-4">
+            <h2 class="text-center mb-4 fw-bold">Bienvenido, disfruta nuestros servicios!!</h2>
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                <label for="username" class="form-label text-white fw-semibold">Nombre de usuario</label>
+                <input type="text" id="username" name="username" class="form-control form-control-lg rounded-pill" placeholder="Tu usuario pet" required>
+                </div>
+
+                <div class="mb-4">
+                <label for="password" class="form-label text-white fw-semibold">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control form-control-lg rounded-pill" placeholder="Tu contraseña 🔒" required>
+                </div>
+
+                <div class="d-grid">
+                <button type="submit" class="btn btn-warning btn-lg rounded-pill fw-bold">¡Vamos allá!</button>
+                </div>
+            </form>
+
+            <p class="text-center mt-4 mb-0">¿Nuevo por aquí? <a href="{% url 'registro' %}" class="text-warning fw-semibold">Crea tu cuenta</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
