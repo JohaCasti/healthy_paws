@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from users.views import *
 from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,8 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('contacto/', contacto, name='contacto'),
     path('home/', home, name='home'),
+    #path('logout/', about, name='logout'),
+    path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
 ]
 
 if settings.DEBUG:

@@ -2,13 +2,12 @@
 
 {% block content %}
 
-    <h1>bienvenido {{ user.username }}</h1>
     <!-- Bienvenida -->
     <div class="welcome-section">
-        <h1>¡Bienvenido, {{ request.user.first_name|default:request.user.username }}!</h1>
-        <p>Nos alegra verte de nuevo en Healthy Paws 🐾</p>
+        <h3>¡Bienvenido, {{ user.username }}!</h3>
+        <p class="text-sm-center">Nos alegra verte en Healthy Paws 🐾</p>
+        {% include "mensajes.html" %}
     </div>
-
     <!-- Slider de novedades -->
     <div id="novedadesCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

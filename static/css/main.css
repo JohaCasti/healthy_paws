@@ -19,7 +19,7 @@
     animation: slideIn 0.5s ease-out forwards;
     opacity: 0;
     transform: translateX(100%); /* Inicialmente fuera de pantalla a la derecha */
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 /* Mensaje de éxito */
