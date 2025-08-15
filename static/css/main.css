@@ -1,9 +1,18 @@
 /* llamado a todos los estilos por app */
 
 @import url('users.css');
+@import url('mascotas.css');
 
 
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+th, td {
+    text-align: center !important;
+}
 
 
 /* ESTILOS PARA LOS METODOS DE MESSAGE */
@@ -61,3 +70,4 @@
         transform: translateX(0);
     }
 }
+

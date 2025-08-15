@@ -41,8 +41,15 @@
         </button>
     </div>
 
+    <!-- seccion recordatorio y novedades -->
+    <section class="reminder-section">
+        <h2 class="section-title">Novedades y pendientes</h2>
+        <p class="text-center">Recuerda que puedes agendar vacunaciones, revisiones y más servicios para tu mascota.</p>
+        <p class="text-center">¡Mantente al día con la salud de tu peludo!</p>
+    </section>
+
     <!-- Secciones principales -->
-    <div class="container">
+    <section class="container">
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="row mt-4">
 
@@ -53,7 +60,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Mascotas</h5>
                         <p class="card-text">Registra y accede a toda la información de tus mascotas.</p>
-                        <a href="#" class="btn btn-orange">Ver más</a>
+                        <a href="{% url 'mascotas' %}" class="btn btn-orange">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +71,7 @@
                     <img src="https://www.depelos.co/blog/wp-content/uploads/2015/06/Guarderia_para_perros_blog_de_pelos.jpg.jpg" class="card-img-top rounded" alt="Servicios">
                     <div class="card-body">
                         <h5 class="card-title">Servicios</h5>
-                        <p class="card-text">Agenda vacunaciones, revisiones, spa y guardería.</p>
+                        <p class="card-text">Agenda vacunaciones, revisiones, spa, guardería y urgencias.</p>
                         <a href="#" class="btn btn-orange">Ver más</a>
                     </div>
                 </div>
@@ -83,6 +90,6 @@
             </div>
 
         </div>
-    </div>
+    </section>
     
 {% endblock %}

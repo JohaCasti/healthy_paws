@@ -61,7 +61,3 @@ def contacto(request):
     return render(request, 'contacto.html')
 
 
-# def about(request):
-#     logout(request)
-#     messages.success(request, "Sesión cerrada correctamente.")
-#     return render(request, 'index.html')
